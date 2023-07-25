@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DB49F7942A7028A300B3D114 /* LiveActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB49F7932A7028A300B3D114 /* LiveActivityView.swift */; };
 		DB5FA9862A6FC7D7000511B5 /* CoreDataExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5FA9852A6FC7D7000511B5 /* CoreDataExampleApp.swift */; };
 		DB5FA9882A6FC7D7000511B5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5FA9872A6FC7D7000511B5 /* ContentView.swift */; };
 		DB5FA98A2A6FC7D9000511B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB5FA9892A6FC7D9000511B5 /* Assets.xcassets */; };
@@ -51,6 +52,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		DB49F7932A7028A300B3D114 /* LiveActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveActivityView.swift; sourceTree = "<group>"; };
 		DB5FA9822A6FC7D7000511B5 /* CoreDataExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB5FA9852A6FC7D7000511B5 /* CoreDataExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataExampleApp.swift; sourceTree = "<group>"; };
 		DB5FA9872A6FC7D7000511B5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				DB5FA9A72A6FC81D000511B5 /* widgetExtension.swift */,
 				DB5FA9A92A6FC820000511B5 /* Assets.xcassets */,
 				DB5FA9AB2A6FC820000511B5 /* Info.plist */,
+				DB49F7932A7028A300B3D114 /* LiveActivityView.swift */,
 			);
 			path = widgetExtension;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 				DB5FA9B42A6FC857000511B5 /* CoreDataExample.xcdatamodeld in Sources */,
 				DB5FA9A42A6FC81D000511B5 /* widgetExtensionBundle.swift in Sources */,
 				DB5FA9A82A6FC81D000511B5 /* widgetExtension.swift in Sources */,
+				DB49F7942A7028A300B3D114 /* LiveActivityView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

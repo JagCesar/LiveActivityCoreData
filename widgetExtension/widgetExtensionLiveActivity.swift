@@ -10,26 +10,12 @@ import WidgetKit
 import SwiftUI
 
 struct widgetExtensionLiveActivity: Widget {
-    @Environment(\.managedObjectContext) private var viewContext
-    @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
-        animation: .default)
-    private var items: FetchedResults<Item>
+    let persistenceController = PersistenceController.shared
 
     var body: some WidgetConfiguration {
         ActivityConfiguration(for: WidgetExtensionAttributes.self) { context in
-            // Lock screen/banner UI goes here
-
-            ForEach(items) { item in
-                Text(item.timestamp!.debugDescription)
-            }
-
-            VStack {
-                Text("Hello \(context.state.emoji)")
-            }
-            .activityBackgroundTint(Color.cyan)
-            .activitySystemActionForegroundColor(Color.black)
-
+            LiveActivityView(context: context)
+                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         } dynamicIsland: { context in
             DynamicIsland {
                 // Expanded UI goes here.  Compose the expanded UI through
