@@ -41,9 +41,20 @@ struct SimpleEntry: TimelineEntry {
 
 struct widgetExtensionEntryView : View {
     var entry: Provider.Entry
+    @FetchRequest(
+        entity: Item.entity(),
+        sortDescriptors: [NSSortDescriptor(key: "timestamp", ascending: false)]
+    ) var items: FetchedResults<Item>
 
     var body: some View {
         VStack {
+            if let timestamp = items.first?.timestamp {
+                HStack {
+                    Text("CD time:")
+                    Text(timestamp, style: .time)
+                }
+            }
+
             Text("Time:")
             Text(entry.date, style: .time)
 
@@ -55,16 +66,19 @@ struct widgetExtensionEntryView : View {
 
 struct widgetExtension: Widget {
     let kind: String = "widgetExtension"
+    let persistenceController = PersistenceController.shared
 
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
             if #available(iOS 17.0, *) {
                 widgetExtensionEntryView(entry: entry)
                     .containerBackground(.fill.tertiary, for: .widget)
+                    .environment(\.managedObjectContext, persistenceController.container.viewContext)
             } else {
                 widgetExtensionEntryView(entry: entry)
                     .padding()
                     .background()
+                    .environment(\.managedObjectContext, persistenceController.container.viewContext)
             }
         }
         .configurationDisplayName("My Widget")

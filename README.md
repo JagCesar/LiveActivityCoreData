@@ -9,6 +9,7 @@ Modifications:
 - AppGroupPersistentContainer has been created in Persistence.swift, this is requires to add AppGroup support.
 - We have to define the MOM when loading the container, see Persistence.swift#46 - Persistence.swift#50
 - Moved Live Activity view to LiveActivityView.swift
+- Added row to 'widgetExtensionEntryView' which shows latest timestamp added to Core Data. This shows that Home Screen widgets don't have any issues reading from Core Data.
 
 How to reproduce:
 1. Build and run main target
